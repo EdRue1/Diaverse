@@ -1,0 +1,22 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        
+        <%- include('../template/nav')-%>
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Daycare Center</h1>
+            <p class="lead">Use the navigation buttons on the top to access the site for each table and be able to perform CRUD operations on
+            </p>
+
+        </main>
+        <%- include('../template/footer')-%>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        document.getElementById('home').classList.add('active');
+      };
+</script>
+</html>
