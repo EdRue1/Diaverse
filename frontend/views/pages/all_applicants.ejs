@@ -1,0 +1,90 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <%- include('../template/nav')-%>
+            <!-- All applicants -->
+            <h1 class="cover-heading">All Applicants</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip Code</th>
+                        <th>E-Mail</th>
+                        <th>Phone Number</th>
+                        <th>Last 4 Digits of SSN</th>
+                        <th>US Citizen</th>
+                        <th>Eligible to work in US</th>
+                        <th>Certify True</th>
+                        <th>Authorize</th>
+                        <th>No false info</th>
+                        <th>Digital Sign</th>
+                        <th>created_at</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%locals.Applicants.forEach(function(entry) {%>
+                    <tr>
+                        <td><%=entry.ID%></td>
+                        <td><%=entry.AFirstName%></td>
+                        <td><%=entry.ALastName%></td>
+                        <td><%=entry.DOB%></td>
+                        <td><%=entry.Address%></td>
+                        <td><%=entry.ACity%></td>
+                        <td><%=entry.AState%></td>
+                        <td><%=entry.ZipCode%></td>
+                        <td><%=entry.ALastName%></td>
+                        <td><%=entry.Email%></td>
+                        <td><%=entry.APhone%></td>
+                        <td><%=entry.SSN%></td>
+                        <td><%=entry.USCitizen%></td>
+                        <td><%=entry.EligWork%></td>
+                        <td><%=entry.CertifyTrue%></td>
+                        <td><%=entry.Authorize%></td>
+                        <td><%=entry.NoFalseInfo%></td>
+                        <td><%=entry.DigitalSign%></td>
+                        <td><%=entry.created_at%></td>
+                    </tr>
+                    <%});%>
+                </tbody>
+            </table>
+            
+        
+
+        <%- include('../template/footer')-%>
+    </div>
+</body>
+<script>
+    //Set active nav link 
+    window.onload = function() {
+        document.getElementById('facility').classList.add('active');
+      };
+
+    function openTab(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</html>

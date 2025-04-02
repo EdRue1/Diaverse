@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
-var f_items = null;
+var a_items = null;
 var cl_items = null;
 var t_items = null;
 var ch_items = null;
@@ -23,6 +23,21 @@ app.use(bodyParser.json());
 app.get('/',function (req, res) {
     res.render('pages/home')
 });
+
+// a test to check applicants
+app.get('/allapplicants',function (req, res) {
+
+    //res.send('I made it this far');
+
+    axios.get('http://127.0.0.1:5000/data')
+    .then((response)=>{
+        a_items = response.data;
+        console.log(a_items);
+        res.render('pages/all_applicants',{
+            Applicants:a_items
+        });
+    });
+})
 
 
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));
