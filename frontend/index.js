@@ -39,5 +39,30 @@ app.get('/allapplicants',function (req, res) {
     });
 })
 
+// add applicant
+app.post('/applicantform', function (req, res) {
+    var message5 = req.body.fnamtoadd;
+    var message2 = req.body.lnamtoadd;
+    var message7 = req.body.chage;
+    var message6 = req.body.clrmtoadd;
+    var initial_api = 'http://127.0.0.1:5000/api/child'
+
+    axios.post(initial_api, {
+        firstname: message5, 
+        lastname: message2, 
+        age: message7, 
+        room: message6
+    })
+    .then((response) => {
+        let a_item = response.data;
+        console.log(a_item);
+        res.render('pages/child', {
+            child: ch_items, 
+            a_child: a_item
+        });
+    })
+
+});
+
 
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));

@@ -1,0 +1,148 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <%- include('../template/nav')-%>
+             <!-- Add an applicant -->
+             <h1 class="cover-heading">Add an applicant</h1>
+             <form action="/applicantform" method="post">
+                 <div class="form-group">
+                    <!-- Applicant Table -->
+                     <label for="AFirstName" class="form-label">First Name</label>
+                     <input type="text" id="AFirstName" name="AFirstName" class="form-control" placeholder="AFirstName" required
+                     autofocus>
+                     <label for="ALastName" class="form-label">Last Name</label>
+                     <input type="text" id="ALastName" name="ALastName" class="form-control" placeholder="ALastName" required
+                     autofocus>
+                     <label for="DOB" class="form-label">Date of Birth</label>
+                     <input type="date" id="DOB" name="DOB" class="form-control" placeholder="DOB" required
+                     autofocus>
+                     <label for="Address" class="form-label">Address</label>
+                     <input type="text" id="Address" name="Address" class="form-control" placeholder="Address" required
+                     autofocus>
+                     <label for="ACity" class="form-label">City</label>
+                     <input type="text" id="ACity" name="ACity" class="form-control" placeholder="ACity" required
+                     autofocus>
+                     <label for="AState" class="form-label">State</label>
+                     <input type="text" id="AState" name="AState" class="form-control" placeholder="AState" required
+                     autofocus>
+                     <label for="ZipCode" class="form-label">Zip Code</label>
+                     <input type="text" id="DOB" name="ZipCode" class="form-control" placeholder="ZipCode" required
+                     autofocus>
+                     <label for="Email" class="form-label">E-Mail</label>
+                     <input type="text" id="Email" name="Email" class="form-control" placeholder="Email" required
+                     autofocus>
+                     <label for="APhone" class="form-label">Phone Number</label>
+                     <input type="text" id="APhone" name="APhone" class="form-control" placeholder="APhone" required
+                     autofocus>
+                     <label for="SSN" class="form-label">SSN</label>
+                     <input type="text" id="SSN" name="SSN" class="form-control" placeholder="SSN" required
+                     autofocus>
+                     <!-- Education Table -->
+                     <h1 class="cover-heading">Add education</h1>
+                     <label for="SchoolName" class="form-label">School Name</label>
+                     <input type="text" id="SchoolName" name="SchoolName" class="form-control" placeholder="SchoolName" required
+                     autofocus>
+                     <label for="ECity" class="form-label">City</label>
+                     <input type="text" id="ECity" name="ECity" class="form-control" placeholder="ECity" required
+                     autofocus>
+                     <label for="EState" class="form-label">State</label>
+                     <input type="text" id="EState" name="EState" class="form-control" placeholder="EState" required
+                     autofocus>
+                     <label for="Degree" class="form-label">Degree</label>
+                     <input type="text" id="Degree" name="Degree" class="form-control" placeholder="Degree" required
+                     autofocus>
+                     <label for="Major" class="form-label">Major</label>
+                     <input type="text" id="Major" name="Major" class="form-control" placeholder="Major" required
+                     autofocus>
+                     <label for="EStartYear" class="form-label">Start Year</label>
+                     <input type="number" id="EStartYear" name="EStartYear" class="form-control" placeholder="EStartYear" required
+                     autofocus>
+                     <label for="EEndYear" class="form-label">End Year</label>
+                     <input type="number" id="EEndYear" name="EEndYear" class="form-control" placeholder="EEndYear" required
+                     autofocus>
+                     <label for="OtherCerts" class="form-label">Other Certifications</label>
+                     <input type="text" id="OtherCerts" name="OtherCerts" class="form-control" placeholder="OtherCerts" required
+                     autofocus>
+                     <!-- Previous Employemnt Table -->
+                     <h1 class="cover-heading">Add previous employemnt</h1>
+                     <label for="SchoolName" class="form-label">Company Name</label>
+                     <input type="text" id="PCompanyName" name="SchoolName" class="form-control" placeholder="SchoolName" required
+                     autofocus>
+                     <label for="ECity" class="form-label">City</label>
+                     <input type="text" id="ECity" name="ECity" class="form-control" placeholder="ECity" required
+                     autofocus>
+                     <label for="EState" class="form-label">State</label>
+                     <input type="text" id="EState" name="EState" class="form-control" placeholder="EState" required
+                     autofocus>
+                     <label for="Degree" class="form-label">Degree</label>
+                     <input type="text" id="Degree" name="Degree" class="form-control" placeholder="Degree" required
+                     autofocus>
+                     <label for="Major" class="form-label">Major</label>
+                     <input type="text" id="Major" name="Major" class="form-control" placeholder="Major" required
+                     autofocus>
+                     <label for="EStartYear" class="form-label">Start Year</label>
+                     <input type="number" id="EStartYear" name="EStartYear" class="form-control" placeholder="EStartYear" required
+                     autofocus>
+                     <label for="EEndYear" class="form-label">End Year</label>
+                     <input type="number" id="EEndYear" name="EEndYear" class="form-control" placeholder="EEndYear" required
+                     autofocus>
+                     <label for="OtherCerts" class="form-label">Other Certifications</label>
+                     <input type="text" id="OtherCerts" name="OtherCerts" class="form-control" placeholder="OtherCerts" required
+                     autofocus>
+
+
+
+                     <!-- Continued Applicant Table -->
+                     <label for="USCitizen" class="form-label">Are you a U.S. Citizen?</label>
+                     <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 required
+                     autofocus>
+                     <label for="EligWork" class="form-label">Are you eligible to work in the United States?</label>
+                     <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 required
+                     autofocus>
+                     <label for="CertifyTrue" class="form-label">Do you you certify you have answered truthfully to the bnest of you ability?</label>
+                     <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 required
+                     autofocus>
+                     <label for="Authorize" class="form-label">Do you authorize us to contact you previous employer?</label>
+                     <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 required
+                     autofocus>
+                     <label for="NoFalseInfo" class="form-label">In the event you are employed by Diaverse, do you understand that false or misleading information given in you application or interview may result in a discharge.</label>
+                     <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 required
+                     autofocus>
+                 </div>
+                 <input class="btn btn-lg btn-primary btn-block" type="submit">
+                 </form>
+            
+        
+
+        <%- include('../template/footer')-%>
+    </div>
+</body>
+<script>
+    //Set active nav link 
+    window.onload = function() {
+        document.getElementById('facility').classList.add('active');
+      };
+
+    function openTab(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</html>
