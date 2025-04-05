@@ -130,4 +130,5 @@ def api_add_applicant():
 
     return 'Add user request successful!'
 
-app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
