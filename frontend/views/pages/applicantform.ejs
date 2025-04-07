@@ -3,137 +3,279 @@
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <%- include('../template/nav')-%>
+
              <!-- Add an applicant -->
-             <h1 class="cover-heading">Add an applicant</h1>
+             <h1 class="cover-heading">Personal Information</h1>
              <form action="/applicantform" method="post">
                  <div class="form-group">
+
                     <!-- Applicant Table -->
-                     <label for="AFirstName" class="form-label">First Name</label>
-                     <input type="text" id="AFirstName" name="AFirstName" class="form-control" placeholder="AFirstName" required
-                     autofocus>
-                     <label for="ALastName" class="form-label">Last Name</label>
-                     <input type="text" id="ALastName" name="ALastName" class="form-control" placeholder="ALastName" required
-                     autofocus>
-                     <label for="DOB" class="form-label">Date of Birth</label>
-                     <input type="date" id="DOB" name="DOB" class="form-control" placeholder="DOB" required
-                     autofocus>
-                     <label for="Address" class="form-label">Address</label>
-                     <input type="text" id="Address" name="Address" class="form-control" placeholder="Address" required
-                     autofocus>
-                     <label for="ACity" class="form-label">City</label>
-                     <input type="text" id="ACity" name="ACity" class="form-control" placeholder="ACity" required
-                     autofocus>
-                     <label for="AState" class="form-label">State</label>
-                     <input type="text" id="AState" name="AState" class="form-control" placeholder="AState" required
-                     autofocus>
-                     <label for="ZipCode" class="form-label">Zip Code</label>
-                     <input type="text" id="ZipCode" name="ZipCode" class="form-control" placeholder="ZipCode" required
-                     autofocus>
-                     <label for="Email" class="form-label">E-Mail</label>
-                     <input type="text" id="Email" name="Email" class="form-control" placeholder="Email" required
-                     autofocus>
-                     <label for="APhone" class="form-label">Phone Number</label>
-                     <input type="text" id="APhone" name="APhone" class="form-control" placeholder="APhone" required
-                     autofocus>
-                     <label for="SSN" class="form-label">SSN</label>
-                     <input type="text" id="SSN" name="SSN" class="form-control" placeholder="SSN" required
-                     autofocus>
-                     <!-- Education Table -->
-                     <h1 class="cover-heading">Add education</h1>
-                     <label for="SchoolName" class="form-label">School Name</label>
-                     <input type="text" id="SchoolName" name="SchoolName" class="form-control" placeholder="SchoolName" required
-                     autofocus>
-                     <label for="ECity" class="form-label">City</label>
-                     <input type="text" id="ECity" name="ECity" class="form-control" placeholder="ECity" required
-                     autofocus>
-                     <label for="EState" class="form-label">State</label>
-                     <input type="text" id="EState" name="EState" class="form-control" placeholder="EState" required
-                     autofocus>
-                     <label for="Degree" class="form-label">Degree</label>
-                     <input type="text" id="Degree" name="Degree" class="form-control" placeholder="Degree" required
-                     autofocus>
-                     <label for="Major" class="form-label">Major</label>
-                     <input type="text" id="Major" name="Major" class="form-control" placeholder="Major" required
-                     autofocus>
-                     <label for="EStartYear" class="form-label">Start Year</label>
-                     <input type="number" id="EStartYear" name="EStartYear" class="form-control" placeholder="EStartYear" required
-                     autofocus>
-                     <label for="EEndYear" class="form-label">End Year</label>
-                     <input type="number" id="EEndYear" name="EEndYear" class="form-control" placeholder="EEndYear" required
-                     autofocus>
-                     <label for="OtherCerts" class="form-label">Other Certifications</label>
-                     <input type="text" id="OtherCerts" name="OtherCerts" class="form-control" placeholder="OtherCerts" required
-                     autofocus>
-                     <!-- Previous Employemnt Table -->
-                     <h1 class="cover-heading">Add previous employemnt</h1>
-                     <label for="PCompanyName" class="form-label">Company Name</label>
-                     <input type="text" id="PCompanyName" name="PCompanyName" class="form-control" placeholder="PCompanyName" required
-                     autofocus>
-                     <label for="PCity" class="form-label">City</label>
-                     <input type="text" id="PCity" name="PCity" class="form-control" placeholder="PCity" required
-                     autofocus>
-                     <label for="PState" class="form-label">State</label>
-                     <input type="text" id="PState" name="PState" class="form-control" placeholder="PState" required
-                     autofocus>
-                     <label for="Position" class="form-label">Position</label>
-                     <input type="text" id="Position" name="Position" class="form-control" placeholder="Position" required
-                     autofocus>
-                     <label for="Duties" class="form-label">Duties</label>
-                     <input type="text" id="Duties" name="Duties" class="form-control" placeholder="Duties" required
-                     autofocus>
-                     <label for="PStartYear" class="form-label">Start Year</label>
-                     <input type="number" id="PStartYear" name="PStartYear" class="form-control" placeholder="PStartYear" required
-                     autofocus>
-                     <label for="PEndYear" class="form-label">End Year</label>
-                     <input type="number" id="PEndYear" name="PEndYear" class="form-control" placeholder="PEndYear" required
-                     autofocus>
-                     <label for="Supervisor" class="form-label">Supervisor</label>
-                     <input type="text" id="Supervisor" name="Supervisor" class="form-control" placeholder="Supervisor" required
-                     autofocus>
-                     <label for="ReaForLeav" class="form-label">Reason for leaving?</label>
-                     <input type="text" id="ReaForLeav" name="ReaForLeav" class="form-control" placeholder="ReaForLeav" required
-                     autofocus>
-                     <label for="MayContact" class="form-label">May we contact your previous employer?</label>
-                     <input type="checkbox" id="MayContact" name="MayContact" class="form-control" placeholder="MayContact" value=1 required
-                     autofocus>
-                     <!-- References table -->
-                     <h1 class="cover-heading">References</h1>
-                     <label for="RFirstName" class="form-label">First Name</label>
-                     <input type="text" id="RFirstName" name="RFirstName" class="form-control" placeholder="RFirstName" required
-                     autofocus>
-                     <label for="RLastName" class="form-label">Last Name</label>
-                     <input type="text" id="RLastName" name="RLastName" class="form-control" placeholder="RLastName" required
-                     autofocus>
-                     <label for="Title" class="form-label">Title</label>
-                     <input type="text" id="Title" name="Title" class="form-control" placeholder="Title" required
-                     autofocus>
-                     <label for="RCompanyName" class="form-label">Company Name</label>
-                     <input type="text" id="RCompanyName" name="RCompanyName" class="form-control" placeholder="RCompanyName" required
-                     autofocus>
-                     <label for="RPhone" class="form-label">Phone Number</label>
-                     <input type="text" id="RPhone" name="RPhone" class="form-control" placeholder="RPhone" required
-                     autofocus>
-                     <!-- Continued Applicant Table -->
-                     <label for="USCitizen" class="form-label">Are you a U.S. Citizen?</label>
-                     <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 required
-                     autofocus>
-                     <label for="EligWork" class="form-label">Are you eligible to work in the United States?</label>
-                     <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 required
-                     autofocus>
-                     <label for="CertifyTrue" class="form-label">Do you you certify you have answered truthfully to the bnest of you ability?</label>
-                     <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 required
-                     autofocus>
-                     <label for="Authorize" class="form-label">Do you authorize us to contact you previous employer?</label>
-                     <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 required
-                     autofocus>
-                     <label for="NoFalseInfo" class="form-label">In the event you are employed by Diaverse, do you understand that false or misleading information given in you application or interview may result in a discharge.</label>
-                     <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 required
-                     autofocus>
-                     <label for="DigitalSign" class="form-label">Write your FULL NAME here for your Digital Signature</label>
-                     <input type="text" id="DigitalSign" name="DigitalSign" class="form-control" placeholder="DigitalSign" required
-                     autofocus>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="AFirstName" class="form-label">First Name</label>
+                            <input type="text" id="AFirstName" name="AFirstName" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ALastName" class="form-label">Last Name</label>
+                            <input type="text" id="ALastName" name="ALastName" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="DOB" class="form-label">Date of Birth</label>
+                            <input type="date" id="DOB" name="DOB" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="Address" class="form-label">Address</label>
+                            <input type="text" id="Address" name="Address" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="ACity" class="form-label">City</label>
+                            <input type="text" id="ACity" name="ACity" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="AState" class="form-label">State</label>
+                            <input type="text" id="AState" name="AState" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="ZipCode" class="form-label">Zip Code</label>
+                            <input type="text" id="ZipCode" name="ZipCode" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="Email" class="form-label">E-Mail</label>
+                            <input type="text" id="Email" name="Email" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="APhone" class="form-label">Phone Number</label>
+                            <input type="text" id="APhone" name="APhone" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="SSN" class="form-label">Last 4 digits of your SSN</label>
+                            <input type="text" id="SSN" name="SSN" class="form-control" required
+                            autofocus><br>
+                        </div>
+                    </div>
+
+                    <!-- Education Table -->
+                    <h1 class="cover-heading">What is your educational history?</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="SchoolName" class="form-label">School Name</label>
+                            <input type="text" id="SchoolName" name="SchoolName" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="ECity" class="form-label">City</label>
+                            <input type="text" id="ECity" name="ECity" class="form-control" required
+                            autofocus>
+                        </div>
+                        <dic class="col-md-6">
+                            <label for="EState" class="form-label">State</label>
+                            <input type="text" id="EState" name="EState" class="form-control" required
+                            autofocus>
+                        </dic>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Degree" class="form-label">Degree</label>
+                            <input type="text" id="Degree" name="Degree" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Major" class="form-label">Major</label>
+                            <input type="text" id="Major" name="Major" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="EStartYear" class="form-label">Start Year</label>
+                            <input type="number" id="EStartYear" name="EStartYear" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="EEndYear" class="form-label">End Year</label>
+                            <input type="number" id="EEndYear" name="EEndYear" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="OtherCerts" class="form-label">Other Certifications</label>
+                            <input type="text" id="OtherCerts" name="OtherCerts" class="form-control"  required
+                            autofocus><br>
+                        </div>
+                    </div>
+
+                    <!-- Previous Employemnt Table -->
+                    <h1 class="cover-heading">What is your previous place of employemnt?</h1>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="PCompanyName" class="form-label">Company Name</label>
+                            <input type="text" id="PCompanyName" name="PCompanyName" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="PCity" class="form-label">City</label>
+                            <input type="text" id="PCity" name="PCity" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="PState" class="form-label">State</label>
+                            <input type="text" id="PState" name="PState" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Position" class="form-label">Position</label>
+                            <input type="text" id="Position" name="Position" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="Duties" class="form-label">Duties</label>
+                            <input type="text" id="Duties" name="Duties" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="PStartYear" class="form-label">Start Year</label>
+                            <input type="number" id="PStartYear" name="PStartYear" class="form-control" required
+                            autofocus>
+                        </div>
+                        <dic class="col-md-6">
+                            <label for="PEndYear" class="form-label">End Year</label>
+                            <input type="number" id="PEndYear" name="PEndYear" class="form-control" required
+                            autofocus>
+                        </dic>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Supervisor" class="form-label">Supervisor</label>
+                            <input type="text" id="Supervisor" name="Supervisor" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ReaForLeav" class="form-label">Reason for leaving?</label>
+                            <input type="text" id="ReaForLeav" name="ReaForLeav" class="form-control" required
+                            autofocus><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="MayContact" name="MayContact" class="form-control" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-5.5">
+                            <label for="MayContact" class="form-label">May we contact your previous employer?</label>
+                        </div>
+                    </div>
+
+                    <!-- References table -->
+                    <h1 class="cover-heading">Could you provide us with a reference?</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="RFirstName" class="form-label">First Name</label>
+                            <input type="text" id="RFirstName" name="RFirstName" class="form-control" required
+                            autofocus>
+                        </div>
+                        <dic class="col-md-6">
+                            <label for="RLastName" class="form-label">Last Name</label>
+                            <input type="text" id="RLastName" name="RLastName" class="form-control"  required
+                            autofocus>
+                        </dic>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="Title" class="form-label">Title</label>
+                            <input type="text" id="Title" name="Title" class="form-control" required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="RCompanyName" class="form-label">Company Name</label>
+                            <input type="text" id="RCompanyName" name="RCompanyName" class="form-control" required
+                            autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="RPhone" class="form-label">Phone Number</label>
+                            <input type="text" id="RPhone" name="RPhone" class="form-control" required
+                            autofocus><br><br>
+                        </div>
+                    </div>
+
+                    <!-- Continued Applicant Table -->
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-3.5">
+                            <label for="USCitizen" class="form-label">Are you a U.S. Citizen?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-6.5">
+                            <label for="EligWork" class="form-label">Are you eligible to work in the United States?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-9.5">
+                            <label for="CertifyTrue" class="form-label">Do you you certify you have answered truthfully to the best of your ability?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-7.5">
+                            <label for="Authorize" class="form-label">Do you authorize us to contact you previous employer?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 required
+                            autofocus>
+                        </div>
+                        <div class="col-md-10">
+                            <label for="NoFalseInfo" class="form-label">In the event you are employed by Diaverse, do you understand that false or misleading information given in your application or interview may result in a discharge.</label><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="DigitalSign" class="form-label">Write your FULL NAME here for your Digital Signature</label>
+                        <input type="text" id="DigitalSign" name="DigitalSign" class="form-control" required
+                        autofocus>
+                    </div>
                  </div>
-                 <input class="btn btn-lg btn-primary btn-block" type="submit">
+                 <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit Application">
                  </form>
             
         
