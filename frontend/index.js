@@ -28,6 +28,10 @@ app.get('/home',function (req, res) {
     res.render('pages/home')
 });
 
+app.get('/success', function (req, res) {
+    res.render('pages/success');
+});
+
 // a test to check applicants
 app.get('/allapplicants',function (req, res) {
 
@@ -140,6 +144,5 @@ app.post('/applicantform', function (req, res) {
     })
 
 });
-
 
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));
