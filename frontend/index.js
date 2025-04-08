@@ -29,7 +29,7 @@ app.get('/allapplicants',function (req, res) {
 
     //res.send('I made it this far');
 
-    axios.get('http://127.0.0.1:5000/data')
+    axios.get('http://18.227.183.161:5000/data')
     .then((response)=>{
         a_items = response.data;
         console.log(a_items);
