@@ -145,4 +145,40 @@ app.post('/applicantform', function (req, res) {
 
 });
 
+//LOGIN
+// First display the page
+app.get('/login', function (req, res) {
+    res.render('pages/login');
+});
+
+//send login to backend
+app.post('/process_login', function(req, res){
+    var user = req.body.username;
+    var password = req.body.password;
+
+    var initial_api = "http://127.0.0.1:5000/process_login"
+    axios.post(initial_api, {
+        Username: user, 
+        Pword: password
+      
+    })
+    .then((response) => {
+        console.log(response.data);
+
+        if (response.data.message == 'Login Successful') {
+            res.render('pages/continue');
+        }
+        else {
+            res.render('pages/error', { message: 'Incorrect password' });
+        }
+        
+    })
+    .catch((error) => {
+        console.log(error);
+        res.render('pages/error', { message: 'An error occurred while logging in' });
+    });
+
+
+  });
+
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));
