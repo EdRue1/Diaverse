@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+const cookieParser = require('cookie-parser') //read cookies
 var a_items = null;
 var cl_items = null;
 var t_items = null;
@@ -18,6 +19,11 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+//use cookie parser
+app.use(cookieParser());
+axios.defaults.withCredentials = true;
+
+
 
 //home page
 app.get('/',function (req, res) {
@@ -32,7 +38,7 @@ app.get('/success', function (req, res) {
     res.render('pages/success');
 });
 
-// a test to check applicants
+// a test to check applicants, only used to test, will later be commented out
 app.get('/allapplicants',function (req, res) {
 
     //res.send('I made it this far');
@@ -47,7 +53,7 @@ app.get('/allapplicants',function (req, res) {
     });
 })
 
-// ADD APPLICANT
+////////////////////////////////////////////////////////// ADD APPLICANT
 // First display the page
 app.get('/applicantform', function (req, res) {
     res.render('pages/applicantform');
@@ -145,7 +151,7 @@ app.post('/applicantform', function (req, res) {
 
 });
 
-//LOGIN
+//////////////////////////////////////////////////////////////// LOGIN
 // First display the page
 app.get('/login', function (req, res) {
     res.render('pages/login');
@@ -180,5 +186,23 @@ app.post('/process_login', function(req, res){
 
 
   });
+
+  app.get('/joblist', async function (req, res) {
+    try {
+        const response = await axios.get('http://127.0.0.1:5000/check-login', {
+            withCredentials: true
+        });
+
+        if (response.data.logged_in) {
+            res.render('pages/joblist', { user: response.data.user }); // or however you want to pass user
+        } else {
+            res.redirect('/login');
+        }
+    } catch (error) {
+        console.error('Error checking login:', error.message);
+        res.redirect('/login');
+    }
+});
+
 
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));

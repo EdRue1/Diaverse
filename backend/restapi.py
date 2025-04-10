@@ -23,7 +23,11 @@ import bcrypt
 
 #create application with configuration
 app = flask.Flask(__name__)
+app.secret_key = 'CIS4375'
 app.config["DEBUG"]=True #to show errors in browser
+
+#allow front end to send cookies
+CORS(app, supports_credentials=True)
 
 #create an endpoint to run default home page request
 @app.route('/', methods=['GET'])
@@ -159,13 +163,20 @@ def login():
     stored_hash = dbuser['Pword']
 
     if bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8')):
+        #store user username in session
+        session['user'] = user 
         return jsonify({'message': 'Login Successful'}), 200
     else:
         return jsonify({'message': 'Incorrect password'}), 401
 
 
+#check to make sure you are a user
+@app.route('/check-login', methods=['GET'])
+def check_login():
+    if 'user' in session:
+        return jsonify({'logged_in': True, 'user': session['user']}), 200
+    else:
+        return jsonify({'logged_in': False}), 401
 
-    #result = execute_read_query(myconn, mysqltst)
-    #return jsonify(result)
 
 app.run()
