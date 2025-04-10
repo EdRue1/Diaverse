@@ -3,6 +3,9 @@ import flask
 
 from flask import jsonify
 from flask import request
+from flask import render_template
+from flask import Flask
+
 
 import sql
 from sql import create_connection
@@ -11,6 +14,9 @@ from sql import execute_update_query
 
 import creds
 import time
+from werkzeug.security import check_password_hash
+
+import bcrypt
 
 
 #create application with configuration
@@ -130,5 +136,34 @@ def api_add_applicant():
 
     return 'Add user request successful!'
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+#get user and password
+@app.route('/process_login', methods=['POST'])
+def login():
+    request_data = request.get_json()
+    user = request_data['Username']
+    password = request_data['Pword']
+
+    mycreds = creds.creds()
+    myconn = create_connection(mycreds.myhostname, mycreds.uname, mycreds.passwd, mycreds.dbname)
+    
+    cursor = myconn.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM Users WHERE Username = %s", (user,))
+    dbuser = cursor.fetchone()
+    cursor.close()
+    if not dbuser:
+        return jsonify({'message': 'User not found'}), 404
+    
+    stored_hash = dbuser['Pword']
+
+    if bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8')):
+        return jsonify({'message': 'Login Successful'}), 200
+    else:
+        return jsonify({'message': 'Incorrect password'}), 401
+
+
+
+    #result = execute_read_query(myconn, mysqltst)
+    #return jsonify(result)
+
+app.run()
