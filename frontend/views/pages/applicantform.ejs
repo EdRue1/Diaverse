@@ -181,7 +181,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="MayContact" name="MayContact" class="form-control" value=1 required
+                            <!-- Hidden input ensures a 0 is sent if checkbox is unchecked -->
+                            <input type="hidden" name="MayContact" value="0">
+
+                            <input type="checkbox" id="MayContact" name="MayContact" class="form-control" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-5.5">
@@ -226,7 +229,9 @@
                     <!-- Continued Applicant Table -->
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 required
+                            <input type="hidden" name="USCitizen" value="0">
+
+                            <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-3.5">
@@ -235,7 +240,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 required
+                            <input type="hidden" name="EligWork" value="0">
+
+                            <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-6.5">
@@ -244,7 +251,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 required
+                            <input type="hidden" name="CertifyTrue" value="0">
+
+                            <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-9.5">
@@ -253,16 +262,20 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 required
+                            <input type="hidden" name="Authorize" value="0">
+
+                            <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-7.5">
-                            <label for="Authorize" class="form-label">Do you authorize us to contact you previous employer?</label>
+                            <label for="Authorize" class="form-label">Do you authorize us to investigate your places of previous employment?</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 required
+                            <input type="hidden" name="NoFalseInfo" value="0">
+
+                            <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 
                             autofocus>
                         </div>
                         <div class="col-md-10">
