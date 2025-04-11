@@ -4,8 +4,9 @@ var bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 const cookieParser = require('cookie-parser') //read cookies
+const session = require('express-session');
 var a_items = null;
-var cl_items = null;
+var job_items = null;
 var t_items = null;
 var ch_items = null;
 
@@ -22,6 +23,12 @@ app.use(bodyParser.json());
 //use cookie parser
 app.use(cookieParser());
 axios.defaults.withCredentials = true;
+
+app.use(session({
+    secret: 'CIS4375',
+    resave: false,
+    saveUninitialized: false
+  }));
 
 
 
@@ -172,6 +179,8 @@ app.post('/process_login', function(req, res){
         console.log(response.data);
 
         if (response.data.message == 'Login Successful') {
+            req.session.loggedIn = true;
+            req.session.username = user;
             res.render('pages/continue');
         }
         else {
@@ -180,29 +189,37 @@ app.post('/process_login', function(req, res){
         
     })
     .catch((error) => {
-        console.log(error);
+        console.log("Error checking login:", error.response?.status);
         res.render('pages/error', { message: 'An error occurred while logging in' });
     });
 
 
   });
 
-  app.get('/joblist', async function (req, res) {
-    try {
-        const response = await axios.get('http://127.0.0.1:5000/check-login', {
-            withCredentials: true
-        });
-
-        if (response.data.logged_in) {
-            res.render('pages/joblist', { user: response.data.user }); // or however you want to pass user
-        } else {
-            res.redirect('/login');
-        }
-    } catch (error) {
-        console.error('Error checking login:', error.message);
-        res.redirect('/login');
+app.get('/joblist', async function (req, res) {
+    if (!req.session.loggedIn) {
+        return res.redirect('/login');
     }
+
+    // If logged in, render the joblist page
+    axios.get('http://127.0.0.1:5000/job_list')
+    .then((response)=>{
+        job_items = response.data;
+        console.log(job_items);
+        res.render('pages/joblist',{
+            job:job_items
+        }); // or fetch from Flask and render
+
+    })
+    
 });
+
+app.post('/logout', (req, res) => {
+    req.session.destroy(() => {
+        res.redirect('/login'); // Or redirect to the home page or wherever you want after logging out
+    });
+});
+
 
 
 app.listen(port, () => console.log(`MasterEJS app Started on port ${port}!`));

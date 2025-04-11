@@ -177,6 +177,16 @@ def check_login():
         return jsonify({'logged_in': True, 'user': session['user']}), 200
     else:
         return jsonify({'logged_in': False}), 401
+    
+
+#get all jobs
+@app.route('/job_list', methods=['GET'])
+def all_job_info():
+    mycreds = creds.creds()
+    myconn = create_connection(mycreds.myhostname, mycreds.uname, mycreds.passwd, mycreds.dbname)
+    mysqlst = "SELECT * FROM JobTracking"
+    joblist = execute_read_query(myconn, mysqlst)
+    return jsonify(joblist)
 
 
 app.run()
