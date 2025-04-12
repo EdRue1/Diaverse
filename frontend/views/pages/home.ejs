@@ -1,14 +1,27 @@
 <%- include('../template/head')-%>
 
-<body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<body class="text-center" style="
+background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 90%),
+            url('images/truck-home.jpg') no-repeat center center fixed;
+background-size: cover;
+color: white;
+position: relative;
+min-height: 100vh;
+">
+<!-- Picture from https://pixabay.com/photos/truck-semi-transportation-3401529/ -->
+<!-- <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+                background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div> -->
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="position: relative; z-index: 2;">
 
         
         <%- include('../template/nav')-%>
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Welcome to Diaverse Trucking</h1>
-            <p class="lead">We are a trucking company that specializes in getting your delivery right to your client. 
-                We are always looking for new or experienced drivers to join our team of excellence. If you are interested you can apply <a href="/applicantform">HERE</a>.
+            <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
+                <h1 class="cover-heading">Welcome to Diaverse Trucking</h1>
+                <p class="lead">We are a trucking company that specializes in getting your delivery right to your client. 
+                We are always looking for new or experienced drivers to join our team of excellence. If you are interested you can apply <a href="/applicantform" style="color: #ffd700;">HERE</a>.
+            </div>
+
             </p>
 
         </main>
