@@ -19,6 +19,16 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+/*
+ * Nav
+ */
+
+.bg-true-black {
+  background-color: #9c0000 !important;
+  color: #fff;
+}
+
+
 
 /*
  * Base structure

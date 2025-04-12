@@ -1,23 +1,30 @@
-<%- include('../template/head'); %>
+<%- include('../template/head')-%>
 
-</head>
-<body class="text-center">
+<body class="text-center" style="
+background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 90%),
+            url('images/truck-success.jpg') no-repeat center center fixed;
+background-size: cover;
+color: white;
+position: relative;
+min-height: 100vh;
+">
+<!-- Picture from https://pixabay.com/photos/semi-truck-18-wheeler-truck-5292026/ -->
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <%- include('../template/nav'); %>
 
-
-        <main>
-        <main role="main" class="inner cover">
-            <h1 class="cover-heading">Succesfully sent application</h1>
+        <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
+            <main role="main" class="inner cover">
+            <h1 class="cover-heading">✅ Application Sent!</h1>
             <p class="lead">
             </p>
         </main>
+        </div>
+
 
            
 
 
-    </main>
-            <%- include('../template/footer'); %>
+            <%- include('../template/footer')-%>
     </div>
 
 
