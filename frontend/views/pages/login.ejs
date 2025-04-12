@@ -1,13 +1,21 @@
 <%- include('../template/head')-%>
 
-<body class="text-center">
+<body class="text-center" style="
+background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 90%),
+            url('images/truck-login.jpg') no-repeat center center fixed;
+background-size: cover;
+color: white;
+position: relative;
+min-height: 100vh;
+">
+<!-- Picture from https://pixabay.com/photos/truck-semi-trailer-usa-602567/ -->
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <%- include('../template/nav')-%>
         <main role="main" class="inner cover">
-            <div>
+            <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
                 <form action="/process_login" method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1" class="form-label">User name</label>
+                        <label for="exampleInputEmail1" class="form-label">Username</label>
                         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
                         autofocus>
                     </div>
@@ -16,7 +24,7 @@
                         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
                         required>
                      </div>
-                    <input class="btn btn-lg btn-primary btn-block" type="submit">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
                 </form>
             </div>
         </main>

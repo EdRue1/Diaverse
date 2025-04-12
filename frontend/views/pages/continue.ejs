@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%- include('../template/head'); %>
+<%- include('../template/head'); %>
 
-</head>
+
 <body class="text-center">
 
-    <header>
-        <%- include('../template/head'); %>
-    </header>
+
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <main>
+        <%- include('../template/nav')-%>
 
 
         <main role="main" class="inner cover">
             <h1 class="cover-heading">Succesfully logged in</h1>
-            <p class="lead">Press the button to continue to the home page
+            <p class="lead">Press the button to continue to the job list page
             </p>
             <p class="lead">
                 <a href="/joblist" class="btn btn-lg btn-secondary">Continue ></a>
@@ -24,11 +19,8 @@
 
 
 
-    </main>
 
-    <footer>
         <%- include('../template/footer'); %>
-    </footer>
     </div>
 
     
