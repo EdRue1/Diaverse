@@ -1,10 +1,19 @@
 <%- include('../template/head')-%>
 
-<body class="text-center">
+<body class="text-center" style="
+background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 90%),
+            url('images/truck-form.jpg') no-repeat center center fixed;
+background-size: cover;
+color: white;
+position: relative;
+min-height: 100vh;
+">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <%- include('../template/nav')-%>
 
              <!-- Add an applicant -->
+             <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
+
              <h1 class="cover-heading">Personal Information</h1>
              <form action="/applicantform" method="post">
                  <div class="form-group">
@@ -290,6 +299,7 @@
                  </div>
                  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit Application">
                  </form>
+                 </div>
             
         
 
