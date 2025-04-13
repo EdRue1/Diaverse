@@ -194,7 +194,7 @@ min-height: 100vh;
                     <div class="row">
                         <div class="col-md-1">
                             <!-- Hidden input ensures a 0 is sent if checkbox is unchecked -->
-                            <input type="hidden" name="MayContact" value="0">
+                            <!--<input type="hidden" name="MayContact" value="0">-->
 
                             <input type="checkbox" id="MayContact" name="MayContact" class="form-control" value=1 
                             autofocus>
@@ -241,7 +241,7 @@ min-height: 100vh;
                     <!-- Continued Applicant Table -->
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="hidden" name="USCitizen" value="0">
+                           <!--<input type="hidden" name="USCitizen" value="0">--> 
 
                             <input type="checkbox" id="USCitizen" name="USCitizen" class="form-control" placeholder="USCitizen" value=1 
                             autofocus>
@@ -252,7 +252,7 @@ min-height: 100vh;
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="hidden" name="EligWork" value="0">
+                            <!--<input type="hidden" name="EligWork" value="0">-->
 
                             <input type="checkbox" id="EligWork" name="EligWork" class="form-control" placeholder="EligWork" value=1 
                             autofocus>
@@ -263,7 +263,7 @@ min-height: 100vh;
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="hidden" name="CertifyTrue" value="0">
+                           <!--<input type="hidden" name="CertifyTrue" value="0">--> 
 
                             <input type="checkbox" id="CertifyTrue" name="CertifyTrue" class="form-control" placeholder="CertifyTrue" value=1 
                             autofocus>
@@ -274,7 +274,7 @@ min-height: 100vh;
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="hidden" name="Authorize" value="0">
+                            <!--<input type="hidden" name="Authorize" value="0">-->
 
                             <input type="checkbox" id="Authorize" name="Authorize" class="form-control" placeholder="Authorize" value=1 
                             autofocus>
@@ -285,7 +285,7 @@ min-height: 100vh;
                     </div>
                     <div class="row">
                         <div class="col-md-1">
-                            <input type="hidden" name="NoFalseInfo" value="0">
+                            <!--<input type="hidden" name="NoFalseInfo" value="0">-->
 
                             <input type="checkbox" id="NoFalseInfo" name="NoFalseInfo" class="form-control" placeholder="NoFalseInfo" value=1 
                             autofocus>
@@ -310,30 +310,31 @@ min-height: 100vh;
     </div>
 </body>
 <script>
-    //Set active nav link 
-    window.onload = function() {
-        document.getElementById('applicantform').classList.add('active');
-      };
+    window.onload = function () {
+    document.getElementById('applicantform').classList.add('active');
 
-    function openTab(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
+    document.querySelector('form').addEventListener('submit', function (e) {
+      const checkboxNames = [
+        'MayContact',
+        'USCitizen',
+        'EligWork',
+        'CertifyTrue',
+        'Authorize',
+        'NoFalseInfo'
+      ];
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+      checkboxNames.forEach(name => {
+        const checkbox = document.querySelector(input[name="${name}"]);
+        if (checkbox && !checkbox.checked) {
+          // Create and insert a hidden input to represent '0'
+          const hidden = document.createElement('input');
+          hidden.type = 'hidden';
+          hidden.name = name;
+          hidden.value = '0';
+          checkbox.parentNode.appendChild(hidden);
+        }
+      });
+    });
+  };
 </script>
 </html>
