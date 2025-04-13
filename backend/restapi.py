@@ -7,8 +7,6 @@ from flask import render_template
 from flask import Flask
 from flask import session
 from flask_cors import CORS
-CORS(app, supports_credentials=True,origins=["http://18.227.183.161:3000"])
-
 
 import sql
 from sql import create_connection
