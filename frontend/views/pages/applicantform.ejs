@@ -324,7 +324,7 @@ min-height: 100vh;
       ];
 
       checkboxNames.forEach(name => {
-        const checkbox = document.querySelector(input[name="${name}"]);
+        const checkbox = document.querySelector(`input[name="${name}"]`);
         if (checkbox && !checkbox.checked) {
           // Create and insert a hidden input to represent '0'
           const hidden = document.createElement('input');
