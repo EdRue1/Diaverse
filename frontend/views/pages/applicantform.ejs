@@ -18,7 +18,7 @@ min-height: 100vh;
              <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
 
              <h1 class="cover-heading">Personal Information</h1>
-             <form action="/applicantform" method="post">
+             <form autocomplete="off" action="/applicantform" method="post">
                  <div class="form-group">
 
                     <!-- Applicant Table -->
@@ -76,7 +76,7 @@ min-height: 100vh;
                         </div>
                         <div class="col-md-4">
                             <label for="SSN" class="form-label">Last 4 digits of your SSN</label>
-                            <input type="text" id="SSN" name="SSN" class="form-control" required
+                            <input type="text" id="SSN" name="SSN" maxlength="4" class="form-control" required
                             autofocus><br>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ min-height: 100vh;
                     </div>
 
                     <!-- References table -->
-                    <h1 class="cover-heading">Could you provide us with a reference?</h1>
+                    <h1 class="cover-heading">Please provide us with a reference.</h1>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="RFirstName" class="form-label">First Name</label>
