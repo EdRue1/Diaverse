@@ -13,7 +13,7 @@ min-height: 100vh;
         <%- include('../template/nav')-%>
         <main role="main" class="inner cover">
             <div class="p-4 rounded" style="background-color: rgba(0, 0, 0, 0.85); color: white;">
-                <form action="/process_login" method="post">
+                <form autocomplete="off" action="/process_login" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="form-label">Username</label>
                         <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
