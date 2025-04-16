@@ -50,7 +50,7 @@ app.get('/allapplicants',function (req, res) {
 
     //res.send('I made it this far');
 
-    axios.get('http://3.129.62.19:5000/data')
+    axios.get('http://18.216.151.171:5000/data')
     .then((response)=>{
         a_items = response.data;
         console.log(a_items);
@@ -108,7 +108,7 @@ app.post('/applicantform', function (req, res) {
     var message38 = req.body.RCompanyName;
     var message39 = req.body.RPhone;
 
-    var initial_api = 'http://3.129.62.19:5000/add'
+    var initial_api = 'http://18.216.151.171:5000/add'
 
     axios.post(initial_api, {
         AFirstName: message1, 
@@ -169,7 +169,7 @@ app.post('/process_login', function(req, res){
     var user = req.body.username;
     var password = req.body.password;
 
-    var initial_api = "http://3.129.62.19:5000/process_login"
+    var initial_api = "http://18.216.151.171:5000/process_login"
     axios.post(initial_api, {
         Username: user, 
         Pword: password
@@ -202,7 +202,7 @@ app.get('/joblist', async function (req, res) {
     }
 
     // If logged in, render the joblist page
-    axios.get('http://3.129.62.19:5000/job_list')
+    axios.get('http://18.216.151.171:5000/job_list')
     .then((response)=>{
         job_items = response.data;
         console.log(job_items);
